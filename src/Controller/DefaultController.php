@@ -4,17 +4,26 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
-class LuckyController extends Controller
+class DefaultController extends Controller
 {
     /**
-     * @Route("/lucky/number")
+     * @Route("/", name="homepage")
      */
-    public function numberAction()
+    public function index()
     {
         return new Response(
-            '<html><body>Lucky number:</body></html>'
+            '<html><body>Hello world!!</body></html>'
+        );
+    }
+
+    /**
+     * @Route("/about", name="aboutpage")
+     */
+    public function about()
+    {
+        return new Response(
+            '<html><body>About page!!</body></html>'
         );
     }
 }
