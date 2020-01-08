@@ -1,10 +1,22 @@
 # This file is the entry point to configure your own HTTP routes.
 # Files in the routes/ subdirectory configure the routes for your dependencies.
 
+register:
+    path: /register
+    defaults: { _controller: 'App\Controller\RegisterController::registerAction' }
+
 index:
     path: /
-    defaults: { _controller: 'App\Controller\DefaultController::index' }
+    defaults: { _controller: 'App\Controller\ProductController::index' }
 
-about:
-    path: /about
-    defaults: { _controller: 'App\Controller\DefaultController::about' }
+product:
+    path: /products/{productId}
+    defaults: { _controller: 'App\Controller\ProductController::store' }
+
+product-show:
+    path: /products/view/{productId}
+    defaults: { _controller: 'App\Controller\ProductController::show' }
+
+items:
+    path: /items
+    defaults: { _controller: 'App\Controller\ProductController::items' }
