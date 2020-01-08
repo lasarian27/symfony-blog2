@@ -12,9 +12,11 @@ class DefaultController extends Controller
      */
     public function index()
     {
-        return new Response(
-            '<html><body>Hello world!!</body></html>'
-        );
+        $number = random_int(0, 100);
+
+        return $this->render('home.html.twig', [
+            'number' => $number,
+        ]);
     }
 
     /**
